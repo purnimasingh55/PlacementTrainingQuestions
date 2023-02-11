@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int cmp(const void* a, const void* b){
+    return *(char*)a - *(char*)b; 
+}
+void sort(char st[]){
+    int charCount[1000] ={0};
+    for(int i=0;i<strlen(st);i++){
+        charCount[st[i]-'a']++;
+        
+    }
+}
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    char st[1000];
+    scanf("%[^\n]s",st);
+    qsort(st,strlen(st),sizeof(char),cmp);
+    
+    for(int i =0;i<strlen(st);i++){
+        if(st[i]!=st[i+1])
+            printf("%c",st[i]);
+    }
+    return 0;
+}

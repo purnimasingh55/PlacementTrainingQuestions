@@ -1,0 +1,40 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int n;
+    cin>>n;
+    int arr[n][n];
+    int sr=0,sc=0,er=n-1,ec=n-1,k=1;
+    while(sc<=ec&& sr<=er){
+        for(int i=sc;i<=ec;i++){
+            arr[sr][i] =k++;
+        }
+        sr++;
+        for(int j=sr; j<=er; j++){
+            arr[j][ec] =k++;
+        }
+        ec--;
+        for(int i=ec;i>=sc;i--){
+            arr[er][i] = k++;
+        }
+        er--;
+        for(int j =er;j>=sr;j-- ){
+            arr[j][sc] =k++;
+        }
+        sc++;
+    }
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            cout<<arr[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
